@@ -13,7 +13,7 @@ const Home = ({ searchQuery,addToMyList }) => {
     // Fetch data when component mounts
     useEffect(() => {
         // Fetch movies
-        axios.get('http://localhost:3000/movies')
+        axios.get('${import.meta.env.VITE_API_URL}/movies')
             .then(res => {
                 console.log(res.data);
                 setData(res.data);
@@ -23,7 +23,7 @@ const Home = ({ searchQuery,addToMyList }) => {
             });
 
         // Fetch web series
-        axios.get('http://localhost:3000/webseries')
+        axios.get('${import.meta.env.VITE_API_URL}/webseries')
             .then(res => {
                 console.log(res.data);
                 setSeriesData(res.data);
@@ -127,3 +127,4 @@ const Home = ({ searchQuery,addToMyList }) => {
 };
 
 export default Home;
+
