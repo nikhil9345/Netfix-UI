@@ -19,7 +19,7 @@ const Anm = () => {
   const [nextId, setNextId] = useState(1); // To track the next ID to use
 
   useEffect(() => {
-    const endpoint = `http://localhost:3000/${content.type}`;
+    const endpoint = `${import.meta.env.VITE_API_URL}/${content.type}`;
     axios
       .get(endpoint)
       .then((res) => {
@@ -41,7 +41,7 @@ const Anm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const endpoint = `http://localhost:3000/${content.type}`;
+    const endpoint = `${import.meta.env.VITE_API_URL}/${content.type}`;
     const { type, ...contentData } = { ...content, id: nextId.toString(), rating: parseFloat(content.rating) };
 
     axios
@@ -159,3 +159,4 @@ const Anm = () => {
 };
 
 export default Anm;
+
