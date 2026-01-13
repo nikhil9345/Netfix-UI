@@ -9,7 +9,7 @@ const Films = ({ searchQuery }) => {
 
     useEffect(() => {
         // Fetch movie data
-        axios.get('http://localhost:3000/movies') // Ensure your API supports this
+        axios.get('${import.meta.env.VITE_API_URL}/movies') // Ensure your API supports this
             .then(res => {
                 console.log(res.data); // Check the response data
 
@@ -73,3 +73,4 @@ const Films = ({ searchQuery }) => {
 };
 
 export default Films;
+
