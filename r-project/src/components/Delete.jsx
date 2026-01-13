@@ -11,7 +11,7 @@ const DeleteContent = ({ searchQuery }) => {  // Destructure `searchQuery` from 
   // Fetch items (movies or webseries) from the JSON server
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/${contentType}`)
+      .get(`${import.meta.env.VITE_API_URL}/${contentType}`)
       .then((res) => {
         setItems(res.data);
         setError(null);
@@ -96,3 +96,4 @@ const DeleteContent = ({ searchQuery }) => {  // Destructure `searchQuery` from 
 };
 
 export default DeleteContent;
+
