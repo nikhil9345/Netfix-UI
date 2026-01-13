@@ -9,7 +9,7 @@ const Films = ({ searchQuery }) => {
 
     useEffect(() => {
         // Fetch movie data
-        axios.get('${import.meta.env.VITE_API_URL}/webseries') // Ensure your API supports this
+        axios.get(`${import.meta.env.VITE_API_URL}/webseries`) // Ensure your API supports this
             .then(res => {
                 console.log(res.data); // Check the response data
 
@@ -73,4 +73,5 @@ const Films = ({ searchQuery }) => {
 };
 
 export default Films;
+
 
