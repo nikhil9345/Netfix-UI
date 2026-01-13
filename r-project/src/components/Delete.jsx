@@ -34,7 +34,7 @@ const DeleteContent = ({ searchQuery }) => {  // Destructure `searchQuery` from 
   // Function to delete an item by ID
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:3000/${contentType}/${id}`)
+      .delete(`${import.meta.env.VITE_API_URL}/${contentType}/${id}`)
       .then(() => {
         setItems(items.filter((item) => item.id !== id)); // Update UI after deletion
         setError(null);
@@ -96,4 +96,5 @@ const DeleteContent = ({ searchQuery }) => {  // Destructure `searchQuery` from 
 };
 
 export default DeleteContent;
+
 
